@@ -181,9 +181,20 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         setTitleTextSize(mTitleSize);
         setContentTextSize(mContentSize);
         setButtonsTextSize(mButtonsSize);
-        setButtonPadding(mButtonsPaddingLeft, mButtonsPaddingTop, mButtonsPaddingRight, mButtonsPaddingBottom);
-        setButtonContainerMargins(mButtonContainerMarginLeft, mButtonContainerMarginTop, mButtonContainerMarginRight,
-            mButtonContainerMarginBottom);
+        if (mButtonsPaddingBottom != 0
+            || mButtonsPaddingTop != 0
+            || mButtonsPaddingRight != 0
+            || mButtonsPaddingBottom != 0) {
+            setButtonPadding(mButtonsPaddingLeft, mButtonsPaddingTop, mButtonsPaddingRight,
+                mButtonsPaddingBottom);
+        }
+        if (mButtonContainerMarginLeft != 0
+            || mButtonContainerMarginTop != 0
+            || mButtonContainerMarginRight != 0
+            || mButtonContainerMarginBottom != 0) {
+            setButtonContainerMargins(mButtonContainerMarginLeft, mButtonContainerMarginTop,
+                mButtonContainerMarginRight, mButtonContainerMarginBottom);
+        }
         setButtonHeight(mButtonHeight);
         setTypeface(mTf);
         changeAlertType(mAlertType, true);
